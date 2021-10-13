@@ -22,8 +22,8 @@ done
 #echo "Testing the transducer 'copy' with the input 'tests/numeroR.txt' (generating pdf)"
 #fstcompose compiled/numeroR.fst compiled/copy.fst | fstshortestpath > compiled/numeroA.fst
 
-echo "Testing the transducer 'leap' with the input 'tests/numeroR.txt' (generating pdf)"
-fstcompose compiled/numeroR.fst compiled/leap.fst | fstshortestpath > compiled/numeroA.fst
+echo "Testing the transducer 'date2year' with the input 'tests/numeroR.txt' (generating pdf)"
+fstcompose compiled/numeroR.fst compiled/date2year.fst | fstshortestpath > compiled/numeroA.fst
 
 #echo "Testing the transducer 'R2A' with the input 'tests/numeroR.txt' (generating pdf)"
 #fstcompose compiled/numeroR.fst compiled/R2A.fst | fstshortestpath > compiled/numeroA.fst
@@ -45,8 +45,8 @@ done
 #echo "Testing the transducer 'copy' with the input 'tests/numeroR.txt' (stdout)"
 #fstcompose compiled/numeroR.fst compiled/copy.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
-echo "Testing the transducer 'leap' with the input 'tests/numeroR.txt' (stdout)"
-fstcompose compiled/numeroR.fst compiled/leap.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+echo "Testing the transducer 'date2year' with the input 'tests/numeroR.txt' (stdout)"
+fstcompose compiled/numeroR.fst compiled/date2year.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
 
 #echo "Testing the transducer 'R2A' with the input 'tests/numeroR.txt' (stdout)"
