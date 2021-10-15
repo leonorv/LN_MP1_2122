@@ -1,0 +1,41 @@
+0 1 1 eps
+0 1 2 eps
+
+1 2 9 eps
+1 2 0 eps
+
+2 3 0 eps
+2 3 2 eps
+2 3 4 eps
+2 3 6 eps
+2 3 8 eps
+
+2 4 1 eps
+2 4 3 eps
+2 4 5 eps
+2 4 7 eps
+2 4 9 eps
+
+3 5 0 leap
+3 5 1 not-leap
+3 5 2 not-leap
+3 5 3 not-leap
+3 5 4 leap
+3 5 5 not-leap
+3 5 6 not-leap
+3 5 7 not-leap
+3 5 8 leap
+3 5 9 not-leap
+
+4 5 0 not-leap
+4 5 1 not-leap
+4 5 2 leap
+4 5 3 not-leap
+4 5 4 not-leap
+4 5 5 not-leap
+4 5 6 leap
+4 5 7 not-leap
+4 5 8 not-leap
+4 5 9 not-leap
+
+5
