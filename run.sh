@@ -13,10 +13,9 @@ fstinvert compiled/R2A.fst > compiled/A2R.fst # A2R
 echo "Compiling: compiled/birthR2A.fst"
 fstcompose compiled/R2A.fst compiled/d2dd.fst > compiled/tmp.fst # R2A2dd
 fstconcat compiled/tmp.fst compiled/copy.fst > compiled/tmp2.fst # R2A2dd copy
-fstconcat compiled/tmp2.fst compiled/tmp.fst > compiled/tmp3.fst # R2A2dd copy R2A2dd
-fstconcat compiled/tmp3.fst compiled/copy.fst > compiled/tmp4.fst # R2A2dd copy R2A2dd copy
-fstcompose compiled/R2A.fst compiled/d2dddd.fst > compiled/tmp5.fst # R2A2dddd
-fstconcat compiled/tmp4.fst compiled/tmp5.fst > compiled/birthR2A.fst # R2A2dd copy R2A2dd copy R2A2dddd
+fstconcat compiled/tmp2.fst compiled/tmp2.fst > compiled/tmp3.fst # R2A2dd copy R2A2dd copy
+fstcompose compiled/R2A.fst compiled/d2dddd.fst > compiled/tmp4.fst # R2A2dddd
+fstconcat compiled/tmp3.fst compiled/tmp4.fst > compiled/birthR2A.fst # R2A2dd copy R2A2dd copy R2A2dddd
 rm compiled/tmp*
 
 echo "Compiling: compiled/birthA2T.fst"
