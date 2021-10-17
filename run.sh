@@ -46,7 +46,7 @@ fstcompose compiled/birthR2A.fst compiled/date2year.fst > compiled/tmp.fst # dat
 fstcompose compiled/tmp.fst compiled/leap.fst > compiled/birthR2L.fst # date2yearAleap
 rm compiled/tmp*
 
-# TODO
+# TESTS
 
 echo "Testing the transducer 'mm2mmm' with the input 'tests/mm2mmm-test.txt' (generating pdf)"
 fstcompose compiled/mm2mmm-test.fst compiled/mm2mmm.fst | fstshortestpath > compiled/mm2mmm-res.fst
@@ -130,3 +130,18 @@ fstcompose compiled/birthT2R-test.fst compiled/birthT2R.fst | fstshortestpath | 
 
 echo "Testing the transducer 'birthR2L' with the input 'tests/birthR2L-test.txt' (stdout)"
 fstcompose compiled/birthR2L-test.fst compiled/birthR2L.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+
+# birthday tests 
+
+echo "Testing the transducer 'birthR2A' with the input 'tests/92509birthR2A.txt' (stdout)"
+fstcompose compiled/92509birthR2A.fst compiled/birthR2A.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthA2T' with the input 'tests/92509birthR2A.txt' (stdout)"
+fstcompose compiled/92509birthA2T.fst compiled/birthA2T.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthT2R' with the input 'tests/92509birthR2A.txt' (stdout)"
+fstcompose compiled/92509birthT2R.fst compiled/birthT2R.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthR2L' with the input 'tests/92509birthR2A.txt' (stdout)"
+fstcompose compiled/92509birthR2L.fst compiled/birthR2L.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
