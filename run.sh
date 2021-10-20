@@ -87,6 +87,32 @@ fstcompose compiled/birthT2R-test.fst compiled/birthT2R.fst | fstshortestpath > 
 echo "Testing the transducer 'birthR2L' with the input 'tests/birthR2L-test.txt' (generating pdf)"
 fstcompose compiled/birthR2L-test.fst compiled/birthR2L.fst | fstshortestpath > compiled/birthR2L-res.fst
 
+# birthday tests
+
+echo "Testing the transducer 'birthR2A' with the input 'tests/92509birthR2A.txt' (generating pdf)"
+fstcompose compiled/92509birthR2A.fst compiled/birthR2A.fst | fstshortestpath > compiled/92509birthR2A-res.fst
+
+echo "Testing the transducer 'birthA2T' with the input 'tests/92509birthA2T.txt' (generating pdf)"
+fstcompose compiled/92509birthA2T.fst compiled/birthA2T.fst | fstshortestpath > compiled/92509birthA2T-res.fst
+
+echo "Testing the transducer 'birthT2R' with the input 'tests/92509birthT2R.txt' (generating pdf)"
+fstcompose compiled/92509birthT2R.fst compiled/birthT2R.fst | fstshortestpath > compiled/92509birthT2R-res.fst
+
+echo "Testing the transducer 'birthR2L' with the input 'tests/92509birthR2L.txt' (generating pdf)"
+fstcompose compiled/92509birthR2L.fst compiled/birthR2L.fst | fstshortestpath > compiled/92509birthR2L-res.fst
+
+echo "Testing the transducer 'birthR2A' with the input 'tests/90760birthR2A.txt' (generating pdf)"
+fstcompose compiled/90760birthR2A.fst compiled/birthR2A.fst | fstshortestpath > compiled/90760birthR2A-res.fst
+
+echo "Testing the transducer 'birthA2T' with the input 'tests/90760birthA2T.txt' (generating pdf)"
+fstcompose compiled/90760birthA2T.fst compiled/birthA2T.fst | fstshortestpath > compiled/90760birthA2T-res.fst
+
+echo "Testing the transducer 'birthT2R' with the input 'tests/90760birthT2R.txt' (generating pdf)"
+fstcompose compiled/90760birthT2R.fst compiled/birthT2R.fst | fstshortestpath > compiled/90760birthT2R-res.fst
+
+echo "Testing the transducer 'birthR2L' with the input 'tests/90760birthR2L.txt' (generating pdf)"
+fstcompose compiled/90760birthR2L.fst compiled/birthR2L.fst | fstshortestpath > compiled/90760birthR2L-res.fst
+
 for i in compiled/*.fst; do
 	echo "Creating image: images/$(basename $i '.fst').pdf"
     fstdraw --portrait --isymbols=syms.txt --osymbols=syms.txt $i | dot -Tpdf > images/$(basename $i '.fst').pdf
@@ -132,16 +158,28 @@ echo "Testing the transducer 'birthR2L' with the input 'tests/birthR2L-test.txt
 fstcompose compiled/birthR2L-test.fst compiled/birthR2L.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
 
-# birthday tests 
+# birthday tests
 
 echo "Testing the transducer 'birthR2A' with the input 'tests/92509birthR2A.txt' (stdout)"
 fstcompose compiled/92509birthR2A.fst compiled/birthR2A.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
-echo "Testing the transducer 'birthA2T' with the input 'tests/92509birthR2A.txt' (stdout)"
+echo "Testing the transducer 'birthA2T' with the input 'tests/92509birthA2T.txt' (stdout)"
 fstcompose compiled/92509birthA2T.fst compiled/birthA2T.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
-echo "Testing the transducer 'birthT2R' with the input 'tests/92509birthR2A.txt' (stdout)"
+echo "Testing the transducer 'birthT2R' with the input 'tests/92509birthT2R.txt' (stdout)"
 fstcompose compiled/92509birthT2R.fst compiled/birthT2R.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
-echo "Testing the transducer 'birthR2L' with the input 'tests/92509birthR2A.txt' (stdout)"
+echo "Testing the transducer 'birthR2L' with the input 'tests/92509birthR2L.txt' (stdout)"
 fstcompose compiled/92509birthR2L.fst compiled/birthR2L.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthR2A' with the input 'tests/90760birthR2A.txt' (stdout)"
+fstcompose compiled/90760birthR2A.fst compiled/birthR2A.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthA2T' with the input 'tests/90760birthA2T.txt' (stdout)"
+fstcompose compiled/90760birthA2T.fst compiled/birthA2T.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthT2R' with the input 'tests/90760birthT2R.txt' (stdout)"
+fstcompose compiled/90760birthT2R.fst compiled/birthT2R.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
+
+echo "Testing the transducer 'birthR2L' with the input 'tests/90760birthR2L.txt' (stdout)"
+fstcompose compiled/90760birthR2L.fst compiled/birthR2L.fst | fstshortestpath | fstproject --project_type=output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
